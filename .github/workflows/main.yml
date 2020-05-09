@@ -32,7 +32,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }} 
-      
+    
+      - name: Snyk
+        uses: snyk/actions@0.1.1  
       # Run dotnet build and publish
       - name: dotnet build and publish
         run: |
@@ -48,4 +50,3 @@ jobs:
           package: '${{ env.AZURE_WEBAPP_PACKAGE_PATH }}/myapp'
 
 # For more samples to get started with GitHub Action workflows to deploy to Azure, refer to https://github.com/Azure/actions-workflow-samples
-
